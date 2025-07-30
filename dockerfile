@@ -5,6 +5,9 @@ FROM python:3.10-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
+ENV TRANSFORMERS_CACHE=/app/hf_cache
+RUN mkdir -p /app/hf_cache && chmod -R 777 /app/hf_cache
+
 # Install required system packages (including ffmpeg)
 RUN apt-get update && \
     apt-get install -y ffmpeg git curl && \
