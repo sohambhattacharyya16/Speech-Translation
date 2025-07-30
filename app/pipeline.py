@@ -1,9 +1,9 @@
 import os
-from transformers import pipeline
-from app.config import ASR_MODEL, TRANSLATION_MODEL
-
 # Set cache directory to avoid PermissionError in Docker
 os.environ["TRANSFORMERS_CACHE"] = "/app/hf_cache"
+
+from transformers import pipeline
+from app.config import ASR_MODEL, TRANSLATION_MODEL
 
 # Load pipelines
 asr_pipeline = pipeline("automatic-speech-recognition", model=ASR_MODEL)
