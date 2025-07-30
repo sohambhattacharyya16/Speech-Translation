@@ -1,6 +1,5 @@
 transformers
 torch
 gradio
-mlflow
 torchaudio
 sentencepiece
